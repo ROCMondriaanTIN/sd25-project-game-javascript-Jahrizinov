@@ -1,11 +1,18 @@
 'use strict'
 //hier komen de view functies, hieronder staat voorbeeld code
-const buttons = document.querySelectorAll('.letters button');
+const cells = document.querySelectorAll('.cells div');
 
-function bindButtons(){
-    for(let b=0;b<buttons.length;b++)
+function bindcells(){
+    for(let c=0;c<cells.length;c++)
     {
-        buttons[b].addEventListener('click', handleLetterClick);
+        cells[c].addEventListener('click', handleLetterClick);
+    }
+}
+
+function showFische(){
+    for(let c=0;c<cells.length;c++)
+    {
+        cells[c].innerHTML=fiches[c];
     }
 }
 
