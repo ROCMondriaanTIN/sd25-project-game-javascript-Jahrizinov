@@ -15,7 +15,7 @@ function handleLetterClick(event) {
 
 }
 
-console.log(fiches);
+console.log(board);
 }
 
 
