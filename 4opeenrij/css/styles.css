@@ -28,9 +28,13 @@ nav{
 
 .cells{
     display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: white;
-    padding: 10px;
+    grid-template-columns: repeat(7, 80px);
+    grid-template-rows: repeat(6, 80px);
+    gap: 12px;
+    background-color: #0f3460; /* speelveld kleur */
+    padding: 20px;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .p1{
@@ -41,19 +45,17 @@ nav{
     background-color: yellow;
 }
 
-.grid-cells > div {
-    background-color: white;
-    border: 2px solid rgba(0, 0, 0, 0.8);
-    border-radius: 50%;
-    padding: 10px;
-    font-size: 40px;
-    text-align: center;
-    cursor: pointer;
-    width: 60px;
-    height: 60px;
+.cells > div {
+    background-color: #ffffff; /* lege plek */
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.25);
 }
 
 .grid-screen{
@@ -78,173 +80,176 @@ nav{
     "c14 c15 c16 c17 c18 c19 c20"
     "c21 c22 c23 c24 c25 c26 c27"
     "c28 c29 c30 c31 c32 c33 c34"
-    "c35 c36 c37 c38 c39 c40 c41 c42";
+    "c35 c36 c37 c38 c39 c40 c41";
 }
 
-#0{
+#D0{
     grid-area: c0;
 }
 
-#1{
+#D1{
     grid-area: c1;
 }
 
-#2{
+#D2{
     grid-area: c2;
 }
 
-#3{
+#D3{
     grid-area: c3;
 }
 
-#4{
+#D4{
     grid-area: c4;
 }
 
-#5{
+
+#D5{
     grid-area: c5;
 }
 
-#6{
+#D6{
     grid-area: c6;
 }
 
-#7{
+#D7{
     grid-area: c7;
 }
 
-#8{
+#D8{
     grid-area: c8;
 }
 
-#9{
+#D9{
     grid-area: c9;
 }
 
-#10{
+
+#D10{
     grid-area: c10;
 }
 
-#11{
+#D11{
     grid-area: c11;
 }
 
-#12{
+#D12{
     grid-area: c12;
 }
 
-#13{
+#D13{
     grid-area: c13;
 }
 
-#14{
+#D14{
     grid-area: c14;
 }
 
-#15{
+#D15{
     grid-area: c15;
 }
 
-#16{
+#D16{
     grid-area: c16;
 }
 
-#17{
+#D17{
     grid-area: c17;
 }
 
-#18{
+#D18{
     grid-area: c18;
 }
 
-#19{
+#D19{
     grid-area: c19;
 }
 
-#20{
+#D20{
     grid-area: c20;
 }
 
-#21{
+#D21{
     grid-area: c21;
 }
 
-#22{
+#D22{
     grid-area: c22;
 }
 
-#23{
+#D23{
     grid-area: c23;
 }
 
-#24{
+#D24{
     grid-area: c24;
 }
 
-#25{
+#D25{
     grid-area: c25;
 }
 
-#26{
+#D26{
     grid-area: c26;
 }
 
-#27{
+#D27{
     grid-area: c27;
 }
 
-#28{
+#D28{
     grid-area: c28;
 }
 
-#29{
+#D29{
     grid-area: c29;
 }
 
-#30{
+#D30{
     grid-area: c30;
 }
 
-#31{
+#D31{
     grid-area: c31;
 }
 
-#32{
+#D32{
     grid-area: c32;
 }
 
-#33{
+#D33{
     grid-area: c33;
 }
 
-#34{
+#D34{
     grid-area: c34;
 }
 
-#35{
+
+#D35{
     grid-area: c35;
 }
 
-#36{
+#D36{
     grid-area: c36;
 }
 
-#37{
+#D37{
     grid-area: c37;
 }
 
-#38{
+#D38{
     grid-area: c38;
 }
 
-#39{
+#D39{
     grid-area: c39;
 }
 
-#40{
+#D40{
     grid-area: c40;
 }
 
-#41{
+#D41{
     grid-area: c41;
 }
