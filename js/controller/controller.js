@@ -4,10 +4,10 @@
 function handleLetterClick(event) {
     console.log(event.target.id);
 
-
  if(isFischeAllowed(event.target.id))
     {
     setFische(event.target.id, activeSymbol);
+    console.log('hallo1')
     showFische();
     changeActiveSymbol();
 } else
