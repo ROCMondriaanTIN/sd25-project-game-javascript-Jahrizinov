@@ -6,14 +6,14 @@ function handleLetterClick(event) {
 
 
  if(isFischeAllowed(event.target.id))
+    
     {
     setFische(event.target.id, activeSymbol);
     showFische();
     changeActiveSymbol();
 } else
-{
-    alert('Dit veld is niet leeg!');
-    console.log('fische niet toegestaan: ' + event.target.id);
+{console.log('fische niet toegestaan: ' + event.target.id);
+
 }
 
 console.log(board);

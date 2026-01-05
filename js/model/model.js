@@ -1,7 +1,7 @@
 'use strict'
 //hier komt de spelletjes data, hieronder staat een voorbeeld
 
-const fiches = ['','','','','','','','',''];
+const fiches = Array(42).fill('');
 
 function setFische(id, fiche)
 {
@@ -10,6 +10,7 @@ function setFische(id, fiche)
 
 function isFischeAllowed(id){
     if(fiches[id]===''){
+        console.log(activeSymbol)
         return true;
     } else {
     return false;    }
