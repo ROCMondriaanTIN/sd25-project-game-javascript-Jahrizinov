@@ -12,7 +12,12 @@ function bindcells(){
 function showFische(){
     for(let c=0;c<cells.length;c++)
     {
-        cells[c].innerHTML=board[c];
+        cells[c].innerHTML=board[Math.floor(c/7)][c%7];
     }
+}
+
+function showPoints(points){
+    const pointsDiv=document.getElementById('points');
+    pointsDiv.innerHTML='Punten: '+points;
 }
 
