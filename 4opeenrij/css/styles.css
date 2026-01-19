@@ -45,7 +45,7 @@ nav{
     background-color: yellow;
 }
 
-.grid-cells > div {
+.cells > div {
     background-color: #ffffff; /* lege plek */
     border-radius: 6px;
     width: 100%;
@@ -65,7 +65,7 @@ nav{
     background-color: red;
 }
 
-.grid-cells{
+.cells{
     display: grid;
     grid-template-columns: repeat(7, 75px);
     background-color: #0f3460;

@@ -17,52 +17,73 @@
         <a href="">Game Selection</a>
     </nav>
 
-<div class="grid-screen">
-    <div class="grid-cells">
-    <div id="0"></div>
-    <div id="1"></div>
-    <div id="2"></div>
-    <div id="3"></div>
-    <div id="4"></div>
-    <div id="5"></div>
-    <div id="6"></div>
-    <div id="7"></div>
-    <div id="8"></div>
-    <div id="9"></div>
-    <div id="10"></div>
-    <div id="11"></div>
-    <div id="12"></div>
-    <div id="13"></div>
-    <div id="14"></div>
-    <div id="15"></div>
-    <div id="16"></div>
-    <div id="17"></div>
-    <div id="18"></div>
-    <div id="19"></div>
-    <div id="20"></div>
-    <div id="21"></div>
-    <div id="22"></div>
-    <div id="23"></div>
-    <div id="24"></div>
-    <div id="25"></div>
-    <div id="26"></div>
-    <div id="27"></div>
-    <div id="28"></div>
-    <div id="29"></div>
-    <div id="30"></div>
-    <div id="31"></div>
-    <div id="32"></div>
-    <div id="33"></div>
-    <div id="34"></div>
-    <div id="35"></div>
-    <div id="36"></div>
-    <div id="37"></div>
-    <div id="38"></div>
-    <div id="39"></div>
-    <div id="40"></div>
-    <div id="41"></div>
-  </div>
+<div id="winner" style="font-size: 24px; font-weight: bold; margin-bottom: 10px;"></div>
+
+<div class="cells">
+  <!-- rij 0 -->
+  <div id="D0" data-row="0" data-col="0"></div>
+  <div id="D1" data-row="0" data-col="1"></div>
+  <div id="D2" data-row="0" data-col="2"></div>
+  <div id="D3" data-row="0" data-col="3"></div>
+  <div id="D4" data-row="0" data-col="4"></div>
+  <div id="D5" data-row="0" data-col="5"></div>
+  <div id="D6" data-row="0" data-col="6"></div>
+
+  <!-- rij 1 -->
+  <div id="D7" data-row="1" data-col="0"></div>
+  <div id="D8" data-row="1" data-col="1"></div>
+  <div id="D9" data-row="1" data-col="2"></div>
+  <div id="D10" data-row="1" data-col="3"></div>
+  <div id="D11" data-row="1" data-col="4"></div>
+  <div id="D12" data-row="1" data-col="5"></div>
+  <div id="D13" data-row="1" data-col="6"></div>
+
+  <!-- rij 2 -->
+  <div id="D14" data-row="2" data-col="0"></div>
+  <div id="D15" data-row="2" data-col="1"></div>
+  <div id="D16" data-row="2" data-col="2"></div>
+  <div id="D17" data-row="2" data-col="3"></div>
+  <div id="D18" data-row="2" data-col="4"></div>
+  <div id="D19" data-row="2" data-col="5"></div>
+  <div id="D20" data-row="2" data-col="6"></div>
+
+  <!-- rij 3 -->
+  <div id="D21" data-row="3" data-col="0"></div>
+  <div id="D22" data-row="3" data-col="1"></div>
+  <div id="D23" data-row="3" data-col="2"></div>
+  <div id="D24" data-row="3" data-col="3"></div>
+  <div id="D25" data-row="3" data-col="4"></div>
+  <div id="D26" data-row="3" data-col="5"></div>
+  <div id="D27" data-row="3" data-col="6"></div>
+
+  <!-- rij 4 -->
+  <div id="D28" data-row="4" data-col="0"></div>
+  <div id="D29" data-row="4" data-col="1"></div>
+  <div id="D30" data-row="4" data-col="2"></div>
+  <div id="D31" data-row="4" data-col="3"></div>
+  <div id="D32" data-row="4" data-col="4"></div>
+  <div id="D33" data-row="4" data-col="5"></div>
+  <div id="D34" data-row="4" data-col="6"></div>
+
+  <!-- rij 5 -->
+  <div id="D35" data-row="5" data-col="0"></div>
+  <div id="D36" data-row="5" data-col="1"></div>
+  <div id="D37" data-row="5" data-col="2"></div>
+  <div id="D38" data-row="5" data-col="3"></div>
+  <div id="D39" data-row="5" data-col="4"></div>
+  <div id="D40" data-row="5" data-col="5"></div>
+  <div id="D41" data-row="5" data-col="6"></div>
 </div>
+
+<button id="resetButton">Reset Game</button>
+
+<div id="points" style="font-size: 20px; margin-bottom: 10px;">
+  Punten X: 0 | Punten O: 0
+</div>
+
+<button id="resetBoardButton" style="margin-top: 10px;">Reset Board</button>
+
+
 
 <footer>copyright © 2025</footer>
 

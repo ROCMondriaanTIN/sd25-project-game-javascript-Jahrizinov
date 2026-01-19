@@ -1,13 +1,15 @@
 'use strict'
 //hier komen de view functies, hieronder staat voorbeeld code
-const cells = document.querySelectorAll('.grid-cells div');
+const cells = document.querySelectorAll('.cells div');
 
-function bindcells(){
-    for(let c=0;c<cells.length;c++)
-    {
+function bindcells() {
+    console.log("bindcells werkt");
+    const cells = document.querySelectorAll('.cells div');
+    for (let c = 0; c < cells.length; c++) {
         cells[c].addEventListener('click', handleLetterClick);
     }
 }
+
 
 function showFische(){
     for(let c=0;c<cells.length;c++)
@@ -16,8 +18,17 @@ function showFische(){
     }
 }
 
-function showPoints(points){
-    const pointsDiv=document.getElementById('points');
-    pointsDiv.innerHTML='Punten: '+points;
+function showPoints() {
+    const pointsDiv = document.getElementById('points');
+    pointsDiv.innerHTML = `Punten X: ${pointsX} | Punten O: ${pointsO}`;
 }
 
+function showWinner(symbol) {
+    const winnerDiv = document.getElementById('winner');
+    winnerDiv.innerHTML = `Speler ${symbol} wint! 🎉`;
+}
+
+function clearWinner() {
+    const winnerDiv = document.getElementById('winner');
+    winnerDiv.innerHTML = '';
+}

@@ -2,39 +2,32 @@
 //hier komen de eventhandlers, hieronder staat een voorbeeld
 
 function handleLetterClick(event) {
-    console.log(event.target.id);
+    const row = Number(event.target.dataset.row);
+    const col = Number(event.target.dataset.col);
 
-    if(isFischeAllowed(event.target.id))
-    {
-        setFische(event.target.id, activeSymbol);
+    // console.log(row);
+    // console.log(col);
+
+    if (isFischeAllowed(row, col)) {
+        setFische(row, col, activeSymbol);
         showFische();
-        
-        // Check of er een winnaar is
-        if(checkWinner()) {
-            console.log('We have a winner: ' + activeSymbol);
-            alert(`Speler ${activeSymbol} wint! 🎉`);
-            disableCells();
-        } else {
+
+        if (checkWinner())  {
+    // punten toevoegen voor winnaar
+    if(activeSymbol === 'x') pointsX += 10;
+    else pointsO += 10;
+    showWinner(activeSymbol);
+    disableCells();
+    showPoints(); // update UI
+
+} else {
             changeActiveSymbol();
         }
-    } else {
-        console.log('fiche niet toegestaan: ' + event.target.id);
-    }
-
-    console.log(board);
-}
-
-function disableCells() {
-    const cells = document.querySelectorAll('.grid-cells div');
-    for(let c = 0; c < cells.length; c++) {
-        cells[c].removeEventListener('click', handleLetterClick);
-        cells[c].style.pointerEvents = 'none';
-        cells[c].style.opacity = '0.5';
     }
 }
 
 function resetGame() {
-    // Reset het bord
+    // reset het bord
     for(let r = 0; r < 6; r++) {
         for(let c = 0; c < 7; c++) {
             board[r][c] = '';
@@ -42,14 +35,21 @@ function resetGame() {
     }
     activeSymbol = 'x';
     showFische();
-    
-    // Re-enable cells
-    const cells = document.querySelectorAll('.grid-cells div');
+
+    // clear winner display
+    clearWinner();
+
+    // heractiveer cells
+    const cells = document.querySelectorAll('.cells div');
     for(let c = 0; c < cells.length; c++) {
         cells[c].addEventListener('click', handleLetterClick);
         cells[c].style.pointerEvents = 'auto';
         cells[c].style.opacity = '1';
     }
 }
+
+const reset = document.querySelector('#resetButton')
+
+reset.addEventListener('click', resetGame)
 
 

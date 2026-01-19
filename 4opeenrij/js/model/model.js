@@ -9,17 +9,12 @@ const board=[
             ['','','','','','',''],
             ['','','','','','',''],
             ['','','','','','',''],];
-function setFische(id, fiche)
-{
-    //board[id]=fiche;
-    board[Math.floor(id/7)][id%7]=fiche;
+function setFische(row, col, symbol) {
+    board[row][col] = symbol;
 }
 
-function isFischeAllowed(id){
-    if(board[Math.floor(id/7)][id%7]===''){
-        return true;
-    } else {
-    return false;    }
+function isFischeAllowed(row, col) {
+    return board[row][col] === '';
 }
 
 let activeSymbol='x';
@@ -33,6 +28,14 @@ function changeActiveSymbol(){
     }
     console.log(activeSymbol);
 }
+
+let pointsX = 0;
+let pointsO = 0;
+
+
+
+
+
 
 
 
@@ -88,11 +91,6 @@ function checkWinner(){
 }
 
 
-
-
-
-
-checkWinner();
 
 
 
