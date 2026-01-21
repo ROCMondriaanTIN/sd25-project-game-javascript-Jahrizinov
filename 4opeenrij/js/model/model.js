@@ -20,75 +20,123 @@ function isFischeAllowed(row, col) {
 let activeSymbol='x';
 
 function changeActiveSymbol(){
-    //hier komt de code om het actieve symbool te veranderen
-    if(activeSymbol==='x'){
-        activeSymbol='O';
+    if(activeSymbol === 'x'){
+        activeSymbol = 'o'; // kleine letter
     } else {
-        activeSymbol='x';
+        activeSymbol = 'x';
     }
-    console.log(activeSymbol);
+    console.log("Actieve speler:", activeSymbol);
 }
 
+
+let playerX = "Speler X"; // standaardnaam
+let playerO = "Speler O";
 let pointsX = 0;
 let pointsO = 0;
 
-
-
-
-
-
-
-
-function checkWinner(){
-
-    var winner = false;
-    //horizontaal controleren
-    for(let r=0;r<6;r++){
-        for(let c=0;c<4;c++){
-            if(board[r][c]!=='' &&
-               board[r][c]===board[r][c+1] &&
-               board[r][c]===board[r][c+2] &&
-               board[r][c]===board[r][c+3]){
-               winner = true;
-               }
-    }
-    }
-    //verticaal controleren
-    for(let c=0;c<7;c++){
-        for(let r=0;r<3;r++){
-            if(board[r][c]!=='' &&
-               board[r][c]===board[r+1][c] &&
-               board[r][c]===board[r+2][c] &&
-               board[r][c]===board[r+3][c]){
-                winner = true;
-               }
-    }
-    }
-    //diagonaal controleren (linksboven naar rechtsonder)
-    for(let r=0;r<3;r++){
-        for(let c=0;c<4;c++){
-            if(board[r][c]!=='' &&
-               board[r][c]===board[r+1][c+1] &&
-               board[r][c]===board[r+2][c+2] &&
-               board[r][c]===board[r+3][c+3]){
-                winner = true;
-               }
-    }
+function checkWinner() {
+    // horizontaal
+    for(let r=0; r<6; r++){
+        for(let c=0; c<4; c++){
+            if(board[r][c] !== '' &&
+               board[r][c] === board[r][c+1] &&
+               board[r][c] === board[r][c+2] &&
+               board[r][c] === board[r][c+3]){
+                return board[r][c]; // 'x' of 'o'
+            }
+        }
     }
 
-    //diagonaal controleren (rechtsboven naar linksonder)
-    for(let r=3;r<6;r++){
-        for(let c=0;c<4;c++){
-            if(board[r][c]!=='' &&
-               board[r][c]===board[r-1][c+1] &&
-               board[r][c]===board[r-2][c+2] &&
-               board[r][c]===board[r-3][c+3]){
-                winner = true;
-               }
+    // verticaal
+    for(let c=0; c<7; c++){
+        for(let r=0; r<3; r++){
+            if(board[r][c] !== '' &&
+               board[r][c] === board[r+1][c] &&
+               board[r][c] === board[r+2][c] &&
+               board[r][c] === board[r+3][c]){
+                return board[r][c];
+            }
+        }
     }
+
+    // diagonaal linksboven → rechtsonder
+    for(let r=0; r<3; r++){
+        for(let c=0; c<4; c++){
+            if(board[r][c] !== '' &&
+               board[r][c] === board[r+1][c+1] &&
+               board[r][c] === board[r+2][c+2] &&
+               board[r][c] === board[r+3][c+3]){
+                return board[r][c];
+            }
+        }
     }
-    return winner;
+
+    // diagonaal rechtsboven → linksonder
+    for(let r=3; r<6; r++){
+        for(let c=0; c<4; c++){
+            if(board[r][c] !== '' &&
+               board[r][c] === board[r-1][c+1] &&
+               board[r][c] === board[r-2][c+2] &&
+               board[r][c] === board[r-3][c+3]){
+                return board[r][c];
+            }
+        }
+    }
+
+    return null; // niemand gewonnen
 }
+
+
+// function checkWinner(){
+
+//     var winner = false;
+//     //horizontaal controleren
+//     for(let r=0;r<6;r++){
+//         for(let c=0;c<4;c++){
+//             if(board[r][c]!=='' &&
+//                board[r][c]===board[r][c+1] &&
+//                board[r][c]===board[r][c+2] &&
+//                board[r][c]===board[r][c+3]){
+//                winner = true;
+//                }
+//     }
+//     }
+//     //verticaal controleren
+//     for(let c=0;c<7;c++){
+//         for(let r=0;r<3;r++){
+//             if(board[r][c]!=='' &&
+//                board[r][c]===board[r+1][c] &&
+//                board[r][c]===board[r+2][c] &&
+//                board[r][c]===board[r+3][c]){
+//                 winner = true;
+//                }
+//     }
+//     }
+//     //diagonaal controleren (linksboven naar rechtsonder)
+//     for(let r=0;r<3;r++){
+//         for(let c=0;c<4;c++){
+//             if(board[r][c]!=='' &&
+//                board[r][c]===board[r+1][c+1] &&
+//                board[r][c]===board[r+2][c+2] &&
+//                board[r][c]===board[r+3][c+3]){
+//                 winner = true;
+//                }
+//     }
+//     }
+
+//     //diagonaal controleren (rechtsboven naar linksonder)
+//     for(let r=3;r<6;r++){
+//         for(let c=0;c<4;c++){
+//             if(board[r][c]!=='' &&
+//                board[r][c]===board[r-1][c+1] &&
+//                board[r][c]===board[r-2][c+2] &&
+//                board[r][c]===board[r-3][c+3]){
+//                 winner = true;
+//                }
+//     }
+//     }
+//     return winner;
+// }
 
 
 

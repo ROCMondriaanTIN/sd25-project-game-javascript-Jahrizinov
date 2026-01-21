@@ -11,17 +11,32 @@ function bindcells() {
 }
 
 
-function showFische(){
-    for(let c=0;c<cells.length;c++)
-    {
-        cells[c].innerHTML=board[Math.floor(c/7)][c%7];
+function showFische() {
+    for (let c = 0; c < cells.length; c++) {
+        const row = Math.floor(c / 7);
+        const col = c % 7;
+        const symbol = board[row][col];
+
+        cells[c].textContent = symbol;
+
+        // achtergrondkleur in plaats van text color
+        if (symbol === 'x') {
+            cells[c].style.backgroundColor = 'red';
+            cells[c].style.color = 'white'; // tekst beter zichtbaar
+        } else if (symbol === 'o') {
+            cells[c].style.backgroundColor = 'yellow';
+            cells[c].style.color = 'black';
+        } else {
+            cells[c].style.backgroundColor = '#e0e0e0'; // standaard kleur
+            cells[c].style.color = 'black';
+        }
     }
 }
-
 function showPoints() {
     const pointsDiv = document.getElementById('points');
-    pointsDiv.innerHTML = `Punten X: ${pointsX} | Punten O: ${pointsO}`;
+    pointsDiv.innerHTML = `${playerX}: ${pointsX} punten | ${playerO}: ${pointsO} punten`;
 }
+
 
 function showWinner(symbol) {
     const winnerDiv = document.getElementById('winner');

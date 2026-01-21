@@ -2,28 +2,37 @@
 //hier komen de eventhandlers, hieronder staat een voorbeeld
 
 function handleLetterClick(event) {
-    const row = Number(event.target.dataset.row);
-    const col = Number(event.target.dataset.col);
+    const col = Number(event.target.dataset.col); // pak kolom
 
-    // console.log(row);
-    // console.log(col);
+    const row = placeFische(col, activeSymbol); // laat de zet vallen
+    if (row === null) return; // kolom vol
 
-    if (isFischeAllowed(row, col)) {
-        setFische(row, col, activeSymbol);
-        showFische();
+    showFische(); // update UI met symbolen en kleuren
+const winner = checkWinner(); // krijg 'x', 'o', of null
+    if (winner) {
+        // punten bijwerken
+        if (winner === 'x') pointsX += 10;
+        else pointsO += 10;
 
-        if (checkWinner())  {
-    // punten toevoegen voor winnaar
-    if(activeSymbol === 'x') pointsX += 10;
-    else pointsO += 10;
-    showWinner(activeSymbol);
-    disableCells();
-    showPoints(); // update UI
-
-} else {
-            changeActiveSymbol();
-        }
+        showWinner(activeSymbol);       // laat zien wie wint
+        // highlightWinner(winner);  // kleur de 4 op een rij groen
+        // disableCells();           // voorkom verder klikken
+        showPoints();             // update UI
+    } else {
+        changeActiveSymbol();
+        
     }
+console.log("Punten X:", pointsX, "Punten O:", pointsO);
+
+    // if (checkWinner()) {
+    //     if(activeSymbol === 'x') pointsX += 10;
+    //     else pointsO += 10;
+    //     showWinner(activeSymbol);
+    //     disableCells();
+    //     showPoints();
+    // } else {
+    //     changeActiveSymbol(); // pas actief symbool pas aan NA het plaatsen
+    // }
 }
 
 function resetGame() {
@@ -46,6 +55,17 @@ function resetGame() {
         cells[c].style.pointerEvents = 'auto';
         cells[c].style.opacity = '1';
     }
+}
+
+function placeFische(col, symbol) {
+    // loop van onder naar boven in de kolom
+    for (let row = 5; row >= 0; row--) {
+        if (isFischeAllowed(row, col)) {
+            setFische(row, col, symbol);
+            return row; // geeft terug op welke rij de zet is geplaatst
+        }
+    }
+    return null; // kolom vol
 }
 
 const reset = document.querySelector('#resetButton')
