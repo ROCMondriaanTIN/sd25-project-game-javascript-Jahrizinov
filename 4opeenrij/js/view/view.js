@@ -1,4 +1,5 @@
 'use strict'
+//view.js
 //hier komen de view functies, hieronder staat voorbeeld code
 const cells = document.querySelectorAll('.cells div');
 
@@ -40,10 +41,19 @@ function showPoints() {
 
 function showWinner(symbol) {
     const winnerDiv = document.getElementById('winner');
-    winnerDiv.innerHTML = `Speler ${symbol} wint! 🎉`;
+
+    let name = symbol === 'x' ? playerX : playerO;
+    winnerDiv.innerHTML = `${name} wint! 🎉`;
 }
 
 function clearWinner() {
     const winnerDiv = document.getElementById('winner');
     winnerDiv.innerHTML = '';
 }
+
+function showTurn() {
+    const turnDiv = document.getElementById('turn');
+    const name = activeSymbol === 'x' ? playerX : playerO;
+    turnDiv.innerHTML = `Aan de beurt: ${name}`;
+}
+
