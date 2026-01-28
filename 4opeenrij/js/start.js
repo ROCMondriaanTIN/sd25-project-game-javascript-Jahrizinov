@@ -1,13 +1,8 @@
-"use strict"
-//start.js
-//het opstart bestand, de functie start wordt als eerste uitgevoerd
-//met de voorbeeld code kan je de geklite letters zien in je console!
-window.onload=start;
+'use strict'
 
+window.onload = start;
 
-function start()
-{
-    //koppel de eventhandler aan de letters
+function start() {
     bindcells();
 }
 
@@ -17,15 +12,11 @@ function askPlayerNames() {
 
     if (nameX) playerX = nameX;
     if (nameO) playerO = nameO;
+
     showTurn();
-
-
-    showPoints(); // update de UI meteen met namen
+    showPoints();
 }
 
-
-// Bij het laden van de pagina:
 window.addEventListener("load", () => {
     askPlayerNames();
 });
-

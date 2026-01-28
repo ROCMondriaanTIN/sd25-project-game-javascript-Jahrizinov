@@ -1,15 +1,14 @@
 'use strict'
-//model.js
-//hier komt de spelletjes data, hieronder staat een voorbeeld
 
-//const board = Array(42).fill('');
 const board=[
-            ['','','','','','',''],
-            ['','','','','','',''],
-            ['','','','','','',''],
-            ['','','','','','',''],
-            ['','','','','','',''],
-            ['','','','','','',''],];
+    ['','','','','','',''],
+    ['','','','','','',''],
+    ['','','','','','',''],
+    ['','','','','','',''],
+    ['','','','','','',''],
+    ['','','','','','',''],
+];
+
 function setFische(row, col, symbol) {
     board[row][col] = symbol;
 }
@@ -22,34 +21,30 @@ let activeSymbol='x';
 
 function changeActiveSymbol(){
     if(activeSymbol === 'x'){
-        activeSymbol = 'o'; // kleine letter
+        activeSymbol = 'o';
     } else {
         activeSymbol = 'x';
     }
     console.log("Actieve speler:", activeSymbol);
 }
 
-
-let playerX = "Speler X"; // standaardnaam
+let playerX = "Speler X";
 let playerO = "Speler O";
 let pointsX = 0;
 let pointsO = 0;
-let gameActive = true; // spel actief of niet
+let gameActive = true;
 
 function checkWinner() {
-    // horizontaal
     for(let r=0; r<6; r++){
         for(let c=0; c<4; c++){
             if(board[r][c] !== '' &&
                board[r][c] === board[r][c+1] &&
                board[r][c] === board[r][c+2] &&
                board[r][c] === board[r][c+3]){
-                return board[r][c]; // 'x' of 'o'
+                return board[r][c];
             }
         }
     }
-
-    // verticaal
     for(let c=0; c<7; c++){
         for(let r=0; r<3; r++){
             if(board[r][c] !== '' &&
@@ -60,8 +55,6 @@ function checkWinner() {
             }
         }
     }
-
-    // diagonaal linksboven → rechtsonder
     for(let r=0; r<3; r++){
         for(let c=0; c<4; c++){
             if(board[r][c] !== '' &&
@@ -72,8 +65,6 @@ function checkWinner() {
             }
         }
     }
-
-    // diagonaal rechtsboven → linksonder
     for(let r=3; r<6; r++){
         for(let c=0; c<4; c++){
             if(board[r][c] !== '' &&
@@ -84,13 +75,5 @@ function checkWinner() {
             }
         }
     }
-
-    return null; // niemand gewonnen
+    return null;
 }
-
-
-
-
-
-
-
