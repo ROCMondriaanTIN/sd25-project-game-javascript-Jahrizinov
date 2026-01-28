@@ -33,6 +33,7 @@ let playerX = "Speler X"; // standaardnaam
 let playerO = "Speler O";
 let pointsX = 0;
 let pointsO = 0;
+let gameActive = true; // spel actief of niet
 
 function checkWinner() {
     // horizontaal

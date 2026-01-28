@@ -15,8 +15,7 @@ const winner = checkWinner(); // krijg 'x', 'o', of null
         else pointsO += 10;
 
         showWinner(activeSymbol);       // laat zien wie wint
-        // highlightWinner(winner);  // kleur de 4 op een rij groen
-        // disableCells();           // voorkom verder klikken
+        gameActive = false;
         showPoints();             // update UI
     } else {
         changeActiveSymbol();
@@ -55,6 +54,8 @@ function resetGame() {
         cells[c].style.pointerEvents = 'auto';
         cells[c].style.opacity = '1';
     }
+
+    gameActive = true
 }
 
 function placeFische(col, symbol) {
