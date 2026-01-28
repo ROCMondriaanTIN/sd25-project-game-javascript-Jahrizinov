@@ -20,3 +20,5 @@ function askPlayerNames() {
 window.addEventListener("load", () => {
     askPlayerNames();
 });
+
+

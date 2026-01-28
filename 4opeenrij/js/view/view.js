@@ -38,7 +38,7 @@ function showPoints() {
 function showWinner(symbol) {
     const winnerDiv = document.getElementById('winner');
     let name = symbol === 'x' ? playerX : playerO;
-    winnerDiv.innerHTML = `${name} wint! 🎉`;
+    winnerDiv.innerHTML = `${name} wint! `;
 }
 
 function clearWinner() {
